@@ -116,6 +116,18 @@ load("@bazel_latex//:repositories.bzl", "latex_repositories")
 latex_repositories()
 
 # ---------------------------------------------------------------------------
+#       Load dependencies for TAI
+# ---------------------------------------------------------------------------
+pip_import(
+    name = "tai_meta_deps",
+    requirements = "@com_github_oopt_tai//:pip-requirements.txt"
+)
+
+load("@tai_meta_deps//:requirements.bzl", tai_meta_deps_pip_install = "pip_install")
+
+tai_meta_deps_pip_install()
+
+# ---------------------------------------------------------------------------
 #       Load dependencies for pipeline PTF rules
 # ---------------------------------------------------------------------------
 load("@rules_python//python:pip.bzl", "pip_import")
