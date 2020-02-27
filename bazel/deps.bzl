@@ -239,6 +239,14 @@ def stratum_deps():
             shallow_since = "1570056263 -0700",
         )
 
+    if "com_github_jbeder_yaml_cpp" not in native.existing_rules():
+        remote_workspace(
+            name = "com_github_jbeder_yaml_cpp",
+            remote = "https://github.com/jbeder/yaml-cpp",
+            commit = "562aefc114938e388457e6a531ed7b54d9dc1b62",
+            build_file = "@//bazel:external/yamlcpp.BUILD",
+        )
+
 # -----------------------------------------------------------------------------
 #      Golang specific libraries.
 # -----------------------------------------------------------------------------
