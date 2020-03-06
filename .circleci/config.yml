@@ -100,14 +100,6 @@ jobs:
       - *restore_bazel_cache
       - *set_bazelrc
       - run:
-          name: Build p4c-fpm targets
-          command: xargs -a .circleci/p4c-fpm-targets.txt bazel build
-      - *analyze_bazel_profile
-      - *store_bazel_profile
-      - run:
-          name: Test p4c-fpm targets
-          command: xargs -a .circleci/p4c-fpm-targets.txt bazel test
-      - run:
           name: Create p4c-fpm coverage
           command: xargs -a .circleci/p4c-fpm-targets.txt bazel coverage
       - *save_bazel_cache
@@ -210,11 +202,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - unit_tests
       - p4c_fpm_tests
-      - cdlang_tests
-      - coverage
-      - cpp-style-check
   docker-publish:
     jobs:
       - publish-docker-build:
