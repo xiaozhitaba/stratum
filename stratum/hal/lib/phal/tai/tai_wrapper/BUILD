@@ -54,7 +54,6 @@ stratum_cc_library(
         "tai_wrapper_interface.h",
     ],
     deps = [
-        "@com_github_tai_implementations//tai_mux:libtai-mux",
         "@com_github_oopt_tai//:libmetatai",
         "@com_github_oopt_tai//:tai_hdrs",
         "@com_github_oopt_tai//:meta_hdrs",

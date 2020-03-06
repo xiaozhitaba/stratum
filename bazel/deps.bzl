@@ -18,9 +18,7 @@
 
 load("//bazel:workspace_rule.bzl", "remote_workspace")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-load("@bazel_tools//tools/build_defs/repo:git.bzl",
-     "git_repository",
-     "new_git_repository")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 
 P4RUNTIME_VER = "1.1.0-rc.1"
@@ -292,15 +290,8 @@ def stratum_deps():
 #        TAI library
 # -----------------------------------------------------------------------------
     if "com_github_oopt_tai" not in native.existing_rules():
-        remote_workspace(
+        git_repository(
             name = "com_github_oopt_tai",
-            remote = "https://github.com/bohdan-oheruk-plvision/oopt-tai.git",
-            commit = "04dcb585a729330b81c03afbe8f4b5b7bfeee413",
-        )
-
-    if "com_github_tai_implementations" not in native.existing_rules():
-        remote_workspace(
-            name = "com_github_tai_implementations",
-            remote = "https://github.com/bohdan-oheruk-plvision/oopt-tai-implementations.git",
-            commit = "b9b8aa49484bb118cc63897445eff8ad9bc030d3",
+            remote = "https://github.com/Yi-Tseng/oopt-tai.git",
+            commit = "60672209c6dd963c468b7a7d08ddd0fc182b0808",
         )
