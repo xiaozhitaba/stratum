@@ -27,11 +27,13 @@ load(
     "HOST_ARCHES",
 )
 
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@rules_cc//cc:defs.bzl", "cc_proto_library")
+load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
+
 package(
     default_visibility = STRATUM_INTERNAL,
 )
-
-load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
 
 config_setting(
     name = "with_grpc_tai",

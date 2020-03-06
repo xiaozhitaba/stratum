@@ -75,7 +75,7 @@ boost_deps()
 load("@rules_python//python:repositories.bzl", "py_repositories")
 py_repositories()
 
-load("@rules_python//python:pip.bzl", "pip_repositories")
+load("@rules_python//python:pip.bzl", "pip_repositories", "pip_import")
 pip_repositories()
 
 load("//stratum/hal/lib/phal/onlp:onlp.bzl", "onlp_configure")
@@ -130,7 +130,6 @@ tai_meta_deps_pip_install()
 # ---------------------------------------------------------------------------
 #       Load dependencies for pipeline PTF rules
 # ---------------------------------------------------------------------------
-load("@rules_python//python:pip.bzl", "pip_import")
 pip_import(
     name = "ptf_deps",
     requirements = "//stratum/pipelines/ptf:requirements.txt",
