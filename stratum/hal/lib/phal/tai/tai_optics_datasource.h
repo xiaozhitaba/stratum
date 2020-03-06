@@ -78,7 +78,7 @@ class TaiOpticsDataSource final : public DataSource {
   std::unique_ptr<TaishClient> taish_client_;
   #else
   // Pointer to the Tai Manager. Not created or owned by this class.
-  tai::TAIManager* tai_manager_;
+  tai::TaiManager* tai_manager_;
   #endif
 
   // Managed attributes.

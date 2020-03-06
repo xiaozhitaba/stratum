@@ -21,6 +21,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <condition_variable>
 
 #include "stratum/glue/logging.h"
 #include "stratum/lib/utils.h"

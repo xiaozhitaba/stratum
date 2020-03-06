@@ -62,7 +62,7 @@ TaiOpticsDataSource::TaiOpticsDataSource(int id, CachePolicy* cache_policy)
       "localhost:50051", grpc::InsecureChannelCredentials()));
 #else
   // Pointer to the Tai Manager. Not created or owned by this class.
-  tai_manager_ = tai::TAIManager::CreateSingleton();
+  tai_manager_ = tai::TaiManager::CreateSingleton();
 #endif
 
   module_slot_.AssignValue(id);
