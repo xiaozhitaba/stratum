@@ -24,7 +24,7 @@ load(
     "stratum_package",
 )
 load(
-    "//stratum/p4c_backend/common:build_defs.bzl",
+    "//stratum/p4c_backends/common:build_defs.bzl",
     "p4_fpm_compile",
 )
 
