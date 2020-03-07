@@ -3,7 +3,7 @@ build --copt -O0
 
 # Set convenient location for Bazel files to cache
 startup --output_user_root=/tmp/bazel-cache/output-root
--disk_cache=/tmp/bazel-cache/disk-cache
+build --disk_cache=/tmp/bazel-cache/disk-cache
 
 # Bazel doesn't calculate resource ceiling correctly when running under Docker.
 # Memory, CPU cores, disk I/O

@@ -77,13 +77,13 @@ jobs:
   unit_tests:
     docker:
       - image: stratumproject/build:bazel-2.2.0
+    environment:
+      - CC: clang
+      - CXX: clang++
     steps:
       - checkout
       - *restore_bazel_cache
       - *set_bazelrc
-      - run:
-          name: Set compiler
-          command: export CC='clang' CXX='clang++'
       - run:
           name: Build Stratum targets
           command: xargs -a .circleci/build-targets.txt bazel build
