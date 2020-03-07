@@ -82,6 +82,9 @@ jobs:
       - *restore_bazel_cache
       - *set_bazelrc
       - run:
+          name: Set compiler
+          command: export CC='clang' CXX='clang++'
+      - run:
           name: Build Stratum targets
           command: xargs -a .circleci/build-targets.txt bazel build
       - *analyze_bazel_profile
@@ -172,8 +175,8 @@ workflows:
   build_and_test:
     jobs:
       - unit_tests
-      - coverage
-      - cpp-style-check
+      # - coverage
+      # - cpp-style-check
   docker-publish:
     jobs:
       - publish-docker-build:
